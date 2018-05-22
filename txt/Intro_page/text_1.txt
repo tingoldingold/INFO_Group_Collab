@@ -1,7 +1,0 @@
-Kickstarter is a funding platform for everything from film, to
-gaming, to music, art, and design. They try to host the most 
-innovative and imaginative ideas that are brought to life by 
-their users. Everything on Kickstarter must be a project with a
-clear goal, like making an album, a book, or a work of art. A 
-project will eventually be completed, and something will be 
-produced by it.
