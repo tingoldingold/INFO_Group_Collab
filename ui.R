@@ -23,13 +23,13 @@ shinyUI(navbarPage(
                    Information Systems option while concurrently pursing an 
                    Informatics Minor. His main interest are in Data Analytics 
                    and Visualization."),
-            tags$a(href="tingold1997@gmail.com", "Email Tristan!"), 
+            tags$a(href="mailto:tingold1997@gmail.com", "Email Tristan!"), 
             tags$h3("Maegan Nevalsky"),
             tags$p("Maegan studies stuff......"),
-            tags$a(href="maegann@uw.edu ", "Email Maegan!"), 
+            tags$a(href="mailto:maegann@uw.edu ", "Email Maegan!"), 
             tags$h3("Soham Pardeshi"),
             tags$p("Soham Pardeshi studies stuff......."),
-            tags$a(href="spard@uw.edu", "Email Soham!"), 
+            tags$a(href="mailto:spard@uw.edu", "Email Soham!"), 
             tags$h3("Estelle Jiang"),
             tags$p("Estelle Jiang studies stuff......."),
             tags$a(href="https://github.com/tingoldingold/INFO_Group_Collab", 
