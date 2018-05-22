@@ -1,3 +1,11 @@
-h1 {
+.para_one {
+  color: gray;
+}
 
+h1{
+  color: black;
+}
+
+.page_one_about {
+  text-align: justify;
 }
