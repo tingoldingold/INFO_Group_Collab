@@ -24,16 +24,18 @@ shinyUI(navbarPage(
                    Informatics Minor. His main interest are in Data Analytics 
                    and Visualization."),
             tags$a(href="mailto:tingold1997@gmail.com", "Email Tristan!"), 
+            
             tags$h3("Maegan Nevalsky"),
             tags$p("Maegan studies stuff......"),
             tags$a(href="mailto:maegann@uw.edu ", "Email Maegan!"), 
+            
             tags$h3("Soham Pardeshi"),
             tags$p("Soham Pardeshi studies stuff......."),
             tags$a(href="mailto:spard@uw.edu", "Email Soham!"), 
+            
             tags$h3("Estelle Jiang"),
             tags$p("Estelle Jiang studies stuff......."),
-            tags$a(href="https://github.com/tingoldingold/INFO_Group_Collab", 
-                   "Email Estelle!") 
+            tags$a(href="mailto:yichej@uw.edu","Email Estelle!") 
           )
         ), 
         mainPanel(
@@ -124,13 +126,19 @@ shinyUI(navbarPage(
     ),
     tabPanel(
       "Success Statistics",
-      tags$h1("What is Kickstater?"),
+      tags$h1("What is successful?"),
       sidebarLayout(
         sidebarPanel(
-          tags$h2("Second Header")
+          # Create the controls on what to display on x-axis
+          selectInput('success_day', label = 'Choose a day', 
+                      choices = list(
+                        'Monday' = 'Monday', 'Tuesday' = 'Tuesday',
+                        'Wednesday' = "Wednesday"
+                      )
+          )
         ), 
         mainPanel(
-          plotOutput("plot")
+          plotOutput("plot_success")
         )
       )
     ),
