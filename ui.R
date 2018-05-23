@@ -124,13 +124,12 @@ shinyUI(navbarPage(
     ),
     tabPanel(
       "Success Statistics",
-      tags$h1("What is Kickstater?"),
       sidebarLayout(
-        sidebarPanel(
-          tags$h2("Second Header")
-        ), 
         mainPanel(
-          plotOutput("plot")
+          tags$h2("Second Header")
+        ),
+        mainPanel(
+          tags$h2("Second Header")
         )
       )
     ),
