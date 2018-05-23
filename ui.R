@@ -32,8 +32,7 @@ shinyUI(navbarPage(
             tags$a(href="spard@uw.edu", "Email Soham!"), 
             tags$h3("Estelle Jiang"),
             tags$p("Estelle Jiang studies stuff......."),
-            tags$a(href="https://github.com/tingoldingold/INFO_Group_Collab", 
-                   "Email Estelle!") 
+            tags$a(href="mailto:yichej@uw.edu","Email Estelle!")
           )
         ), 
         mainPanel(
@@ -145,4 +144,5 @@ shinyUI(navbarPage(
         )
       )
     )
-))
+  )
+)
