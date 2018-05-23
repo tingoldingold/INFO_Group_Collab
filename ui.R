@@ -125,7 +125,8 @@ shinyUI(navbarPage(
       "Success Statistics",
       sidebarLayout(
         mainPanel(
-          tags$h2("Second Header")
+          tags$h2("Second Header"),
+          plotOutput("plot_success")
         ),
         mainPanel(
           tags$h2("Second Header")
