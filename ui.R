@@ -123,13 +123,24 @@ shinyUI(navbarPage(
     ),
     tabPanel(
       "Success Statistics",
-      sidebarLayout(
-        mainPanel(
-          tags$h2("Second Header"),
+ 
+      tags$hr(),
+      fluidRow(
+        column(12, offset = 2,
+          tags$h2("Project Status"), 
           plotOutput("plot_success")
-        ),
-        mainPanel(
-          tags$h2("Second Header")
+        )
+      ),
+      tags$hr(), 
+      fluidRow(
+        column(12, offset = 2,
+               tags$h4("Result interpretation:", class = "inter")
+        )
+      ),
+      tags$hr(), 
+      fluidRow(
+        column(12, offset = 2,
+               tags$h4("Result interpretation:", class = "inter")
         )
       )
     ),
@@ -139,7 +150,8 @@ shinyUI(navbarPage(
       sidebarLayout(
         sidebarPanel(
           tags$h2("Second Header")
-        ), 
+        ),
+        
         mainPanel(
           plotOutput("plot")
         )
