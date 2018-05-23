@@ -99,7 +99,7 @@ shinyUI(navbarPage(
     ),
     tabPanel(
       "Catagory Analysis",
-      tags$h1("What is Kickstater?"),
+      tags$h1("Catagories?"),
       sidebarLayout(
         sidebarPanel(
           tags$h2("Second Header")
