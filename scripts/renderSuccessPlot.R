@@ -3,7 +3,7 @@ library(stringr)
 
 # createSuccessPlot returns a plot based on the given dataset and the queried day
 createSuccessPlot <- function(dataset) {
-  dataset <- read.csv("./data/ks-projects-201612.csv")
+
   # Manipulate our dataset to contain weekdays and the number of projects that
   # became successful that were launched on those weekdays
   status <- c("successful", "failed", "canceled")
@@ -23,5 +23,4 @@ createSuccessPlot <- function(dataset) {
     ) +
     scale_fill_manual(values=c("#4155f4", "#f44141", "#1fb70b"))
   
-  return(plot)
 }

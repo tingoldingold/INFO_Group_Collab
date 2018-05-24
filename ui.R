@@ -1,4 +1,5 @@
 #---- UI File 
+
 #---- Libraries 
 library(shiny)
 library(plotly)
@@ -127,7 +128,7 @@ shinyUI(navbarPage(
       fluidRow(
         column(12, offset = 2,
           tags$h2("Project Status"), 
-          plotOutput("plot_success")
+          plotOutput("plotTest")
         )
       ),
       tags$hr(), 
