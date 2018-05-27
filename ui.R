@@ -28,7 +28,9 @@ shinyUI(navbarPage(
             tags$p("Maegan studies stuff......"),
             tags$a(href="maegann@uw.edu ", "Email Maegan!"), 
             tags$h3("Soham Pardeshi"),
-            tags$p("Soham Pardeshi studies stuff......."),
+            tags$p("Soham Pardeshi is a Philosophy student at the University
+                  of Washington. He aims to purse the study of the epistemological
+                  overlap between human intelligence and artificial intelligence."),
             tags$a(href="spard@uw.edu", "Email Soham!"), 
             tags$h3("Estelle Jiang"),
             tags$p("Estelle Jiang studies stuff......."),
