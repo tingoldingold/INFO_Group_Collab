@@ -9,3 +9,22 @@ h1{
 .page_one_about {
   text-align: justify;
 }
+
+hr {
+  border: 1px solid #778899;
+  width:60%;
+}
+
+.succ_summary {
+  color: black ;
+  border-style: hidden;
+  border-radius: 8px;
+  border-width: 2px;
+  position: relative;
+  padding: 50px;
+  transition: transform .3s;
+}
+
+.succ_summary:hover {
+    transform: scale(1.15);
+}

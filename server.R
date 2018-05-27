@@ -1,5 +1,7 @@
 #---- Server File 
 source("./scripts/renderSuccessPlot.R")
+source("./scripts/successRaisedPlot.R")
+source("./scripts/successBackersPlot.R")
 
 #---- Libraries 
 library(dplyr)
@@ -17,23 +19,16 @@ shinyServer(function(input, output) {
   ### ---------- Money Pledge Plots --------- ###
   
   ### ------ Success Statistics Plots ------- ###
-  output$plotTest <- renderPlot({
-    status <- c("successful", "failed", "canceled")
-    kickstarter <- kickstarter  %>% 
-      filter(state %in% status) %>% 
-      select(main_category, state, category) 
-    
-    # Build the plot based on the data set
-   plot <- ggplot(data = kickstarter ) +
-      geom_bar(mapping = aes(x = main_category, fill = state), position = "fill") + 
-      coord_flip() +
-      labs(
-        title = "Status of Projects by Catagory",
-        y = "Project Count", 
-        x = "Main Category", 
-        fill = "Status"
-      ) +
-      scale_fill_manual(values=c("#4155f4", "#f44141", "#1fb70b"))# see source() at top
+  output$sucess_plot_1 <- renderPlot({
+    return(createSuccessPlot(kickstarter))
+  })
+  
+  output$sucess_plot_2 <- renderPlot({
+    return(createRaisedPlot(kickstarter))
+  })
+  
+  output$sucess_plot_3 <- renderPlot({
+    return(createBackersPlot(kickstarter))
   })
   
   

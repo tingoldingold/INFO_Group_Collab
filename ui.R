@@ -105,7 +105,7 @@ shinyUI(navbarPage(
           tags$h2("Second Header")
         ), 
         mainPanel(
-          plotOutput("plot")
+          #plotOutput("plot")
         )
       )
     ),
@@ -117,30 +117,36 @@ shinyUI(navbarPage(
           tags$h2("Second Header")
         ), 
         mainPanel(
-          plotOutput("plot")
+          #plotOutput("plot")
         )
       )
     ),
     tabPanel(
       "Success Statistics",
- 
-      tags$hr(),
       fluidRow(
-        column(12, offset = 2,
-          tags$h2("Project Status"), 
-          plotOutput("plotTest")
+        column(10, offset = 1,
+          tags$h2("Status of Projects by Catagory"), 
+          plotOutput("sucess_plot_1", height = 600), 
+          tags$p(class = "succ_summary", "In this text area will be much more 
+                 explanation about the graphs and the conclusions that we can draw from them. ")
         )
       ),
       tags$hr(), 
       fluidRow(
-        column(12, offset = 2,
-               tags$h4("Result interpretation:", class = "inter")
-        )
+        column(10, offset = 1,
+          tags$h2("Dollars Pledged to Successful Projects in the United States"),
+          plotOutput("sucess_plot_2"), 
+          tags$p(class = "succ_summary", "In this text area will be much more 
+                 explanation about the graphs and the conclusions that we can draw from them. ")
+        ) 
       ),
       tags$hr(), 
       fluidRow(
-        column(12, offset = 2,
-               tags$h4("Result interpretation:", class = "inter")
+        column(10, offset = 1,
+          tags$h2("Number of Backers by Category"), 
+          plotOutput("sucess_plot_3"), 
+          tags$p(class = "succ_summary", "In this text area will be much more 
+                 explanation about the graphs and the conclusions that we can draw from them. ")
         )
       )
     ),
@@ -153,7 +159,7 @@ shinyUI(navbarPage(
         ),
         
         mainPanel(
-          plotOutput("plot")
+          #plotOutput("plot")
         )
       )
     )
