@@ -2,6 +2,7 @@
 #---- Libraries 
 library(shiny)
 library(plotly)
+library(ggplot2)
 library(shinythemes)
 library(dplyr)        
 
@@ -104,7 +105,7 @@ shinyUI(navbarPage(
           tags$h2("Second Header")
         ), 
         mainPanel(
-          plotOutput("plot")
+          plotOutput("plot_category")
         )
       )
     ),
@@ -116,7 +117,7 @@ shinyUI(navbarPage(
           tags$h2("Second Header")
         ), 
         mainPanel(
-          plotOutput("plot")
+          plotOutput("plot_money")
         )
       )
     ),
@@ -145,15 +146,18 @@ shinyUI(navbarPage(
     ),
     tabPanel(
       "Distributions",
-      tags$h1("What is Kickstater?"),
+      h1("What is Distributions?"),
       sidebarLayout(
         sidebarPanel(
-          tags$h2("Second Header")
+          
+          # Make a list of checkboxes
+          radioButtons("selection", label = h3("Choose metric..."),
+                       choices = list("Test 1" = 1, "Test 2" = 2)
+          )
         ),
         
-        mainPanel(
-          plotOutput("plot")
-        )
+        # Render the plot on the main panel
+        mainPanel(plotlyOutput("plot_distribution"))
       )
     )
   )
