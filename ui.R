@@ -1,8 +1,8 @@
 #---- UI File 
+
 #---- Libraries 
 library(shiny)
 library(plotly)
-library(ggplot2)
 library(shinythemes)
 library(dplyr)        
 
@@ -123,41 +123,47 @@ shinyUI(navbarPage(
     ),
     tabPanel(
       "Success Statistics",
- 
-      tags$hr(),
       fluidRow(
-        column(12, offset = 2,
-          tags$h2("Project Status"), 
-          plotOutput("plot_success")
+        column(10, offset = 1,
+          tags$h2("Status of Projects by Catagory"), 
+          plotOutput("sucess_plot_1", height = 600), 
+          tags$p(class = "succ_summary", "In this text area will be much more 
+                 explanation about the graphs and the conclusions that we can draw from them. ")
         )
       ),
       tags$hr(), 
       fluidRow(
-        column(12, offset = 2,
-               tags$h4("Result interpretation:", class = "inter")
-        )
+        column(10, offset = 1,
+          tags$h2("Dollars Pledged to Successful Projects in the United States"),
+          plotOutput("sucess_plot_2"), 
+          tags$p(class = "succ_summary", "In this text area will be much more 
+                 explanation about the graphs and the conclusions that we can draw from them. ")
+        ) 
       ),
       tags$hr(), 
       fluidRow(
-        column(12, offset = 2,
-               tags$h4("Result interpretation:", class = "inter")
+        column(10, offset = 1,
+          tags$h2("Number of Backers by Category"), 
+          plotOutput("sucess_plot_3"), 
+          tags$p(class = "succ_summary", "In this text area will be much more 
+                 explanation about the graphs and the conclusions that we can draw from them. ")
         )
       )
     ),
     tabPanel(
       "Distributions",
-      h1("What is Distributions?"),
+      tags$h1("What is Kickstater?"),
       sidebarLayout(
         sidebarPanel(
-          
           # Make a list of checkboxes
           radioButtons("selection", label = h3("Choose metric..."),
                        choices = list("Test 1" = 1, "Test 2" = 2)
           )
         ),
         
-        # Render the plot on the main panel
-        mainPanel(plotlyOutput("plot_distribution"))
+        mainPanel(
+          plotlyOutput("plot_distribution")
+        )
       )
     )
   )
