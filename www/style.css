@@ -23,6 +23,7 @@ hr {
   position: relative;
   padding: 50px;
   transition: transform .3s;
+  text-align: justify;
 }
 
 .succ_summary:hover {

@@ -23,27 +23,21 @@ shinyUI(navbarPage(
                    Information Systems option while concurrently pursing an 
                    Informatics Minor. His main interest are in Data Analytics 
                    and Visualization."),
-<<<<<<< HEAD
-            tags$a(href="tingold1997@gmail.com", "Email Tristan!"), 
-            tags$h3("Maegan Nevalsky"),
-            tags$p("Maegan studies stuff......"),
-            tags$a(href="maegann@uw.edu ", "Email Maegan!"), 
-=======
+
             tags$a(href="mailto:tingold1997@gmail.com", "Email Tristan!"), 
             tags$h3("Maegan Nevalsky"),
             tags$p("Maegan is a Junior at the University of Washington studying
                    Computer Science."),
             tags$a(href="mailto:maegann@uw.edu ", "Email Maegan!"), 
->>>>>>> 62d7a068efb1d8b282e1d7da2100467a9770f970
+
             tags$h3("Soham Pardeshi"),
             tags$p("Soham Pardeshi is a Philosophy student at the University
-                  of Washington. He aims to purse the study of the epistemological
-                  overlap between human intelligence and artificial intelligence."),
-<<<<<<< HEAD
-            tags$a(href="spard@uw.edu", "Email Soham!"), 
-=======
+                  of Washington. He aims to purse the study of the 
+                  epistemological overlap between human intelligence and 
+                   artificial intelligence."),
+
             tags$a(href="mailto:spard@uw.edu", "Email Soham!"), 
->>>>>>> 62d7a068efb1d8b282e1d7da2100467a9770f970
+
             tags$h3("Estelle Jiang"),
             tags$p("Estelle Jiang studies stuff......."),
             tags$a(href="mailto:yichej@uw.edu","Email Estelle!")
@@ -125,30 +119,29 @@ shinyUI(navbarPage(
     ),
     tabPanel(
       "Money Pledged",
-<<<<<<< HEAD
-      tags$h1("What is Kickstater?"),
-      sidebarLayout(
-        sidebarPanel(
-          tags$h2("Second Header")
-=======
+
       tags$h1("How much money is pledged?"),
       sidebarLayout(
         sidebarPanel(
           tags$h2("Filters"),
           selectInput("category", label = h3("Select Category"), 
-                      choices = list("Film & Video"="Film & Video", "Music"="Music", 
+                      choices = list("Film & Video"="Film & Video", 
+                                     "Music"="Music", 
                                      "Publishing"="Publishing", "Games"="Games", 
                                      "Technology"="Technology", "Art"="Art", 
-                                     "Design"="Design", "Food"="Food", "Fashion"="Fashion",
-                                     "Theater"="Theater", "Photography"="Photography",
-                                     "Comics"="Comics", "Crafts"="Crafts", "Journalism"="Journalism", 
+                                     "Design"="Design", "Food"="Food", 
+                                     "Fashion"="Fashion",
+                                     "Theater"="Theater", 
+                                     "Photography"="Photography",
+                                     "Comics"="Comics", "Crafts"="Crafts", 
+                                     "Journalism"="Journalism", 
                                      "Dance"="Dance"), 
                       selected = "Film & Video"),
           sliderInput("goalRange", label = h3("Goal Range"), min = 0, 
                       max = 1000000, value = c(0, 500000), step = 5000),
           sliderInput("pledgedRange", label = h3("Pledged Range"), min = 0, 
                       max = 1000000, value = c(0, 500000), step = 5000)
->>>>>>> 62d7a068efb1d8b282e1d7da2100467a9770f970
+
         ), 
         mainPanel(
           plotOutput("plot_money")
@@ -161,23 +154,62 @@ shinyUI(navbarPage(
         column(10, offset = 1,
           tags$h2("Status of Projects by Catagory"), 
           plotOutput("sucess_plot_1", height = 600), 
-<<<<<<< HEAD
+
           tags$p(class = "succ_summary", "As mentioned ealrier in the analysis, 
-                 only about ", strong("40% "), "of projects acutally reach their funding goal 
-                 and can be started. ")
-=======
-          tags$p(class = "succ_summary", "In this text area will be much more 
-                 explanation about the graphs and the conclusions that we can draw from them. ")
->>>>>>> 62d7a068efb1d8b282e1d7da2100467a9770f970
+                 only about ", strong("40% "), "of projects acutally reach their
+                 funding goal and can be started. Kickstarter works on an
+                 \"All-orNothing\" protocal which means there is little risk for
+                 a Backer looking to get involved in new, creative, and 
+                 seemingly low-ball projects. However, if you are a serious 
+                 Backer looking to fund projects that will have great sucess and
+                 bring you benefits in the long run, it is worth noting which
+                 projects have the highest sucess averages.", br(), br(), 
+                 strong("Key takeaways from this graph: "), br(), "It is 
+                 important to notice that Theatre, Dance and Comics have high 
+                 success rates, these projects are often put together by good
+                 knowledgable producers, writers, and actors/dancer. However, 
+                 these projects may be harder to come by, and because volume in 
+                 these categories is so low, if you are a Backer that likes to 
+                 find a project that aligns well with their interest, it may be
+                 hard to find your niche. Categories such as Fashion, Games and 
+                 Technology will have much higher volumes of projects and will
+                 more appropiately satisfy niche creative demands but the
+                 likelyhood of failure is much higher. There are trade-offs to 
+                 being a Backer for different types of projects. We recommend 
+                 trying to find projects that interest you in categories of both 
+                 high and low success. ")
         )
       ),
       tags$hr(), 
       fluidRow(
         column(10, offset = 1,
-          tags$h2("Dollars Pledged to Successful Projects in the United States"),
+          tags$h2("Dollars Pledged to Successful Projects in the United
+                  States"),
           plotOutput("sucess_plot_2"), 
-          tags$p(class = "succ_summary", "In this text area will be much more 
-                 explanation about the graphs and the conclusions that we can draw from them. ")
+          tags$p(class = "succ_summary", "As we talked about earlier there is 
+                 quite a discrepancy created around the sucess of projects when
+                 one considers the volume that these projects bring in. ", 
+                 strong("When only considering projects that are sucessful, "), 
+                 "the technology and gaming sectors bring in upwards of $15 
+                 million. Notice also that those same categories from above that 
+                 enjoyed high success rates are bringing in fractions of that, 
+                 with Theatre bringing in under only $1 million dollars in 
+                 pledges from Backers.", br(), br(), strong("Key takeaways from 
+                 this graph: "), br(), "As a Backer it is extremely important 
+                 that you think about what kind of Backer you
+                 want to be. Ask yourself: \"What do I want my return on 
+                 investment to look like?\" If you are a casual Backer than
+                 relax and find the project that speaks best to you no matter 
+                 the category. On the other hand, if you came to Kickstarter 
+                 with the intention of making a significant amount of profit 
+                 than really consider what sector you want to go into. 
+                 Technology, Gaming and Design have sufficient enough volume in 
+                 successful projects to satisfy the the need for greater 
+                 returns. This is in part due to the fact that higher profile
+                 projects are established in these categories. Think of 
+                 significant return on investment from high profile companies
+                 and you will end end talking about the likes of Oculus,
+                 Elevation Lab, and Bragi to name a few.")
         ) 
       ),
       tags$hr(), 
@@ -185,8 +217,33 @@ shinyUI(navbarPage(
         column(10, offset = 1,
           tags$h2("Number of Backers by Category"), 
           plotOutput("sucess_plot_3"), 
-          tags$p(class = "succ_summary", "In this text area will be much more 
-                 explanation about the graphs and the conclusions that we can draw from them. ")
+          tags$p(class = "succ_summary", "Here is a graph about the Backers, by
+                 the Backers, for the Backer. Of course, all of these graphs 
+                 have been constructed to give Backers insight into certain 
+                 factors about the sucess of projects in different categories. 
+                 However, this one maps out just how many backers are attracted
+                 to project that end up seeing success. There is no surprise 
+                 here that because of the volume of projects described earlier
+                 there are noteworthy spikes in the Technology, Gaming, and 
+                 Design. However there are some interesting spikes that occur 
+                 elsewhere in the graph.", br(), br(), strong("Key takeaways 
+                                                              from this graph"), 
+                 br(), "Film and Video, Music, and Publishing are not to be 
+                 ignored. All three of the categories, although not bringing in 
+                 over a million backers, still bring in over 250,000 Backers per 
+                 year. This shows that they are producing a relatively popular 
+                 product offering and taking the time to look up projects in 
+                 those categories might be a fruitful endeavor. Another 
+                 observation gathered by this graph is the fact that Fashion is 
+                 the only category that displays a relative decrease between 
+                 money pledged and Backers supporting. This could be due to the 
+                 fact that fashion is an market with high entry barriers which 
+                 more commonly suits entry through expensive designer goods. It 
+                 could also be attributed to a relatively low success rate. 
+                 Whatever the cause may be, as a Backer it would be wise to look 
+                 at that category as an area in which one can incur more 
+                 incentives, ROI, or even ownership because of a low volume of 
+                 Backers. ")
         )
       )
     ),

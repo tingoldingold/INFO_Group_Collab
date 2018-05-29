@@ -31,15 +31,15 @@ shinyServer(function(input, output) {
   
   ### ------ Success Statistics Plots ------- ###
   output$sucess_plot_1 <- renderPlot({
-    return(createSuccessPlot(kickstarter))
+    return(create_success_plot(kickstarter))
   })
   
   output$sucess_plot_2 <- renderPlot({
-    return(createRaisedPlot(kickstarter))
+    return(create_raised_plot(kickstarter))
   })
   
   output$sucess_plot_3 <- renderPlot({
-    return(createBackersPlot(kickstarter))
+    return(create_backers_plot(kickstarter))
   })
   
   
