@@ -22,6 +22,7 @@ create_raised_plot <- function(dataset) {
     ), stat = "identity") +
     coord_flip() +
     labs(
+      title = "",
       x = "Main Category",
       y = "US Dollars Pledged"
     ) +

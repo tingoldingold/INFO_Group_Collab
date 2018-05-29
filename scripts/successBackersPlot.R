@@ -21,6 +21,7 @@ create_backers_plot <- function(dataset) {
     ), stat = "identity") +
     coord_flip() +
     labs(
+      title = "",
       y = "Backers",
       x = "Main Category"
     ) +

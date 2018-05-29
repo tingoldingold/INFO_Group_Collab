@@ -154,7 +154,6 @@ shinyUI(navbarPage(
         column(10, offset = 1,
           tags$h2("Status of Projects by Catagory"), 
           plotOutput("sucess_plot_1", height = 600), 
-
           tags$p(class = "succ_summary", "As mentioned ealrier in the analysis, 
                  only about ", strong("40% "), "of projects acutally reach their
                  funding goal and can be started. Kickstarter works on an
@@ -183,8 +182,8 @@ shinyUI(navbarPage(
       tags$hr(), 
       fluidRow(
         column(10, offset = 1,
-          tags$h2("Dollars Pledged to Successful Projects in the United
-                  States"),
+          tags$h2("Dollars Pledged to Successful 
+                  Projects in the United States"),
           plotOutput("sucess_plot_2"), 
           tags$p(class = "succ_summary", "As we talked about earlier there is 
                  quite a discrepancy created around the sucess of projects when

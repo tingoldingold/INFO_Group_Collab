@@ -20,6 +20,7 @@ create_success_plot <- function(dataset) {
     ) +
     coord_flip() +
     labs(
+      title = "",
       y = "Project Count",
       x = "Main Category",
       fill = "Status"
