@@ -23,15 +23,16 @@ shinyUI(navbarPage(
                    Information Systems option while concurrently pursing an 
                    Informatics Minor. His main interest are in Data Analytics 
                    and Visualization."),
-            tags$a(href="tingold1997@gmail.com", "Email Tristan!"), 
+            tags$a(href="mailto:tingold1997@gmail.com", "Email Tristan!"), 
             tags$h3("Maegan Nevalsky"),
-            tags$p("Maegan studies stuff......"),
-            tags$a(href="maegann@uw.edu ", "Email Maegan!"), 
+            tags$p("Maegan is a Junior at the University of Washington studying
+                   Computer Science."),
+            tags$a(href="mailto:maegann@uw.edu ", "Email Maegan!"), 
             tags$h3("Soham Pardeshi"),
             tags$p("Soham Pardeshi is a Philosophy student at the University
                   of Washington. He aims to purse the study of the epistemological
                   overlap between human intelligence and artificial intelligence."),
-            tags$a(href="spard@uw.edu", "Email Soham!"), 
+            tags$a(href="mailto:spard@uw.edu", "Email Soham!"), 
             tags$h3("Estelle Jiang"),
             tags$p("Estelle Jiang studies stuff......."),
             tags$a(href="mailto:yichej@uw.edu","Email Estelle!")
@@ -113,10 +114,23 @@ shinyUI(navbarPage(
     ),
     tabPanel(
       "Money Pledged",
-      tags$h1("What is Kickstater?"),
+      tags$h1("How much money is pledged?"),
       sidebarLayout(
         sidebarPanel(
-          tags$h2("Second Header")
+          tags$h2("Filters"),
+          selectInput("category", label = h3("Select Category"), 
+                      choices = list("Film & Video"="Film & Video", "Music"="Music", 
+                                     "Publishing"="Publishing", "Games"="Games", 
+                                     "Technology"="Technology", "Art"="Art", 
+                                     "Design"="Design", "Food"="Food", "Fashion"="Fashion",
+                                     "Theater"="Theater", "Photography"="Photography",
+                                     "Comics"="Comics", "Crafts"="Crafts", "Journalism"="Journalism", 
+                                     "Dance"="Dance"), 
+                      selected = "Film & Video"),
+          sliderInput("goalRange", label = h3("Goal Range"), min = 0, 
+                      max = 1000000, value = c(0, 500000), step = 5000),
+          sliderInput("pledgedRange", label = h3("Pledged Range"), min = 0, 
+                      max = 1000000, value = c(0, 500000), step = 5000)
         ), 
         mainPanel(
           plotOutput("plot_money")
