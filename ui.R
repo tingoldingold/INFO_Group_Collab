@@ -129,8 +129,9 @@ shinyUI(navbarPage(
         column(10, offset = 1,
           tags$h2("Status of Projects by Catagory"), 
           plotOutput("sucess_plot_1", height = 600), 
-          tags$p(class = "succ_summary", "In this text area will be much more 
-                 explanation about the graphs and the conclusions that we can draw from them. ")
+          tags$p(class = "succ_summary", "As mentioned ealrier in the analysis, 
+                 only about ", strong("40% "), "of projects acutally reach their funding goal 
+                 and can be started. ")
         )
       ),
       tags$hr(), 
