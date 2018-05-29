@@ -23,15 +23,27 @@ shinyUI(navbarPage(
                    Information Systems option while concurrently pursing an 
                    Informatics Minor. His main interest are in Data Analytics 
                    and Visualization."),
+<<<<<<< HEAD
             tags$a(href="tingold1997@gmail.com", "Email Tristan!"), 
             tags$h3("Maegan Nevalsky"),
             tags$p("Maegan studies stuff......"),
             tags$a(href="maegann@uw.edu ", "Email Maegan!"), 
+=======
+            tags$a(href="mailto:tingold1997@gmail.com", "Email Tristan!"), 
+            tags$h3("Maegan Nevalsky"),
+            tags$p("Maegan is a Junior at the University of Washington studying
+                   Computer Science."),
+            tags$a(href="mailto:maegann@uw.edu ", "Email Maegan!"), 
+>>>>>>> 62d7a068efb1d8b282e1d7da2100467a9770f970
             tags$h3("Soham Pardeshi"),
             tags$p("Soham Pardeshi is a Philosophy student at the University
                   of Washington. He aims to purse the study of the epistemological
                   overlap between human intelligence and artificial intelligence."),
+<<<<<<< HEAD
             tags$a(href="spard@uw.edu", "Email Soham!"), 
+=======
+            tags$a(href="mailto:spard@uw.edu", "Email Soham!"), 
+>>>>>>> 62d7a068efb1d8b282e1d7da2100467a9770f970
             tags$h3("Estelle Jiang"),
             tags$p("Estelle Jiang studies stuff......."),
             tags$a(href="mailto:yichej@uw.edu","Email Estelle!")
@@ -113,10 +125,30 @@ shinyUI(navbarPage(
     ),
     tabPanel(
       "Money Pledged",
+<<<<<<< HEAD
       tags$h1("What is Kickstater?"),
       sidebarLayout(
         sidebarPanel(
           tags$h2("Second Header")
+=======
+      tags$h1("How much money is pledged?"),
+      sidebarLayout(
+        sidebarPanel(
+          tags$h2("Filters"),
+          selectInput("category", label = h3("Select Category"), 
+                      choices = list("Film & Video"="Film & Video", "Music"="Music", 
+                                     "Publishing"="Publishing", "Games"="Games", 
+                                     "Technology"="Technology", "Art"="Art", 
+                                     "Design"="Design", "Food"="Food", "Fashion"="Fashion",
+                                     "Theater"="Theater", "Photography"="Photography",
+                                     "Comics"="Comics", "Crafts"="Crafts", "Journalism"="Journalism", 
+                                     "Dance"="Dance"), 
+                      selected = "Film & Video"),
+          sliderInput("goalRange", label = h3("Goal Range"), min = 0, 
+                      max = 1000000, value = c(0, 500000), step = 5000),
+          sliderInput("pledgedRange", label = h3("Pledged Range"), min = 0, 
+                      max = 1000000, value = c(0, 500000), step = 5000)
+>>>>>>> 62d7a068efb1d8b282e1d7da2100467a9770f970
         ), 
         mainPanel(
           plotOutput("plot_money")
@@ -129,9 +161,14 @@ shinyUI(navbarPage(
         column(10, offset = 1,
           tags$h2("Status of Projects by Catagory"), 
           plotOutput("sucess_plot_1", height = 600), 
+<<<<<<< HEAD
           tags$p(class = "succ_summary", "As mentioned ealrier in the analysis, 
                  only about ", strong("40% "), "of projects acutally reach their funding goal 
                  and can be started. ")
+=======
+          tags$p(class = "succ_summary", "In this text area will be much more 
+                 explanation about the graphs and the conclusions that we can draw from them. ")
+>>>>>>> 62d7a068efb1d8b282e1d7da2100467a9770f970
         )
       ),
       tags$hr(), 
