@@ -20,7 +20,7 @@ kickstarter <- read.csv(
 )
 
 kickstarter18 <- read.csv(
-  file = "./data/ks-projects-201801.csv", 
+  file = "./data/ks-projects-201801.csv",
   stringsAsFactors = FALSE
 )
 
@@ -33,10 +33,12 @@ shinyServer(function(input, output) {
     return(create_category_plot(kickstarter, input$main_category))
   })
   ### ---------- Money Pledge Plots --------- ###
-  output$plot_money <- renderPlot(({
-    return(createPledgedPlot(kickstarter18, input$goalRange, 
-                             input$pledgedRange, input$category))
-  }))
+  output$plot_money <- renderPlot({
+    return(createPledgedPlot(
+      kickstarter18, input$goal_range,
+      input$pledged_range, input$category
+    ))
+  })
 
   ### ------ Success Statistics Plots ------- ###
   output$sucess_plot_1 <- renderPlot({
@@ -54,7 +56,11 @@ shinyServer(function(input, output) {
 
   ### -------- Distributions Plots ---------- ###
   output$plot_distribution <- renderPlotly({
-    return(createDistributionPlot(kickstarter, input$distribution_range[1], 
-                                  input$distribution_range[2], input$distribution_day ))
+    return(createDistributionPlot(
+      kickstarter,
+      input$distribution_range[1],
+      input$distribution_range[2],
+      input$distribution_day
+    ))
   })
 })

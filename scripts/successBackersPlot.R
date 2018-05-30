@@ -5,7 +5,7 @@ library(dplyr)
 # createSuccessPlot returns a plot based on the given dataset
 create_backers_plot <- function(dataset) {
   dataset$backers <- as.integer(dataset$backers)
-  
+
   # Manipulate our dataset
   dataset <- dataset %>%
     filter(state == "successful") %>%
