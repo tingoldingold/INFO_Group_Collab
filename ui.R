@@ -1,10 +1,12 @@
 #---- UI File 
-
+ 
 #---- Libraries 
 library(shiny)
 library(plotly)
 library(shinythemes)
 library(dplyr)  
+library(styler)
+library(lintr)
 
 #---- Start UI
 shinyUI(navbarPage(
@@ -118,15 +120,17 @@ shinyUI(navbarPage(
         selectInput(
           "main_category",
           label = "Choose a main category",
-          choices = list("Art", "Comics", 
-                         "Crafts", "Dance", "Design", "Fashion", "Film & Video",
-                         "Food", "Games", "Journalism", "Music", "Photography",
-                         "Publishing", "Technology")
+          choices = list("Art" = "Art", "Comics" = "Comics", 
+                         "Crafts" = "Crafts", "Dance" = "Dance", "Design" = "Design", "Fashion" = "Fashion", 
+                         "Film & Video" = "Film & Video",
+                         "Food"= "Food", "Games" = "Games", "Journalism" = "Journalism", "Music" = "Music", 
+                         "Photography" = "Photography",
+                         "Publishing" = "Publishing", "Technology" = "Technology")
         )), 
         mainPanel(
-          plotlyOutput("category_plot"),
-          tags$p(class = "succ_summary", "In this text area will be much more 
-                 explanation about the graphs and the conclusions that we can draw from them. ")
+          tags$div(plotlyOutput("category_plot")),
+          tags$p(class = "succ_summary top", "This pie chart shows all of subcategories under the main category you chose. The plots can be adjusted based on the 
+                 user's input. Then users are able to check varied subcategories under each main category and get a better idea about how many projects under each subcategory. ")
         )
       )
     ),
@@ -158,19 +162,17 @@ shinyUI(navbarPage(
 
         ), 
         mainPanel(
-          plotOutput("plot_money"),
-          tags$p("This plot shows trends between the target fundraising amount 
-                 of the project incomparison to the actual amount raised. The 
-                 plots can be adjusted based on the min and max amounts for 
-                 either axis in order to see trends for projects in a similar 
-                 price range to your potential project."),
-          tags$p("The projects that lie along the bottom of the graph are likely 
-                 the ones that did not succeed because they did not meet their 
-                 fundraising goal. In most categories, there is a trendline at a 
-                 slope of 1 because many projects raise just over their goal. As 
-                 the goal amount gets higher, there are not many projects that 
-                 fall just short of the goal, most of them either reach the goal 
-                 or don't come close.")
+          plotOutput("plot_money", height = 500),
+          tags$p(class = "succ_summary", "This plot shows trends between the target fundraising amount of the project in
+                 comparison to the actual amount raised. The plots can be adjusted based on the 
+                 min and max amounts for either axis in order to see trends for projects in a 
+                 similar price range to your potential project."),
+          tags$p("The projects that lie along the bottom of the graph are likely the ones that
+                 did not succeed because they did not meet their fundraising goal. In most 
+                 categories, there is a trendline at a slope of 1 because many projects raise just 
+                 over their goal. As the goal amount gets higher, there are not many projects that 
+                 fall just short of the goal, most of them either reach the goal or don't come close.")
+
         )
       )
     ),
@@ -273,20 +275,36 @@ shinyUI(navbarPage(
         )
       )
     ),
-  # Tab four: Distributions
+    # Tab four: Distributions
     tabPanel(
       "Distributions",
-      tags$h1("What is Kickstater?"),
+      tags$h1("How does a Kickstarter Launch-Date Affect a Project?"),
       sidebarLayout(
         sidebarPanel(
-          # Make a list of checkboxes
-          radioButtons("selection", label = h3("Choose metric..."),
-                       choices = list("Test 1" = 1, "Test 2" = 2)
+          # Slider input for max and min goal (i.e. goal range)
+          sliderInput("distribution_range", "Goal Range:",
+                      min = 1, max = 10000,
+                      step = 500, value = c(0, 2500)),
+          
+          # Make a list of days (and one option for "All Days")
+          radioButtons("distribution_day", "Pick a day of the week...",
+                       choices = list(
+                         "All Days" = "All Days", "Monday" = "Monday",
+                         "Tuesday" = "Tuesday", "Wednesday" = "Wednesday", "Thursday" = "Thursday",
+                         "Friday" = "Friday","Saturday" = "Saturday",
+                         "Sunday" = "Sunday"
+                       )
           )
         ),
         
         mainPanel(
-          plotlyOutput("plot_distribution")
+          plotlyOutput("plot_distribution"), br(),
+          p("This interactive graph depicts how far each Kickstarter project has reached toward",
+            "its goal. We can filter by a specific goal range (i.e. how much money the Kickstarter",
+            "project was looking for) as well as the launch day of the week. Surprisingly, the", 
+            "distributions for each metric is roughly the same! In this case, Kickstarter projects",
+            "have roughly the same chance of success or failure regardless of how much money the",
+            "project aims to crowd-source or when the project begins."), br(), br()
         )
       )
     )

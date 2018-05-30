@@ -27,7 +27,7 @@ create_success_plot <- function(dataset) {
     ) +
 
     scale_fill_manual(
-      values = c("#4ebad5", "#f22913", "#1fb70b"), name = "",
+      values = c("#82ccdd", "#ff6b6b", "#69d97e"), name = "",
       breaks = c("successful", "failed", "canceled"),
       labels = c("Successful   ", "Failed   ", "Canceled   ")
     ) +

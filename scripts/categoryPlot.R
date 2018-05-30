@@ -21,13 +21,15 @@ create_category_plot  <- function(dataset, category_name) {
   p <- plot_ly(artbook, labels = ~category, values = ~n, type = 'pie',
                textposition = 'inside',
                textinfo = 'label+percent',
+               width = 500,
+               height = 450,
                insidetextfont = list(color = '#FFFFFF'),
                hoverinfo = 'text',
                text = ~paste("Total number of project is ", n),
                marker = list(colors = colors,
                              line = list(color = '#FFFFFF', width = 0.5)),
                showlegend = FALSE) %>%
-    layout(title = 'United States Personal Expenditures by Categories in 1960',
+    layout(title = 'Kickstarter Subcategories Breakdown',
            xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
            yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE))
   p
