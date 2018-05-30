@@ -144,7 +144,7 @@ shinyUI(navbarPage(
 
         ), 
         mainPanel(
-          plotOutput("plot_money")
+          plotOutput("plot_money", height = 500)
         )
       )
     ),

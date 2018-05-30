@@ -37,7 +37,7 @@ shinyServer(function(input, output) {
   output$sucess_plot_2 <- renderPlot({
     return(create_raised_plot(kickstarter))
   })
-  
+    
   output$sucess_plot_3 <- renderPlot({
     return(create_backers_plot(kickstarter))
   })
