@@ -10,16 +10,23 @@ source("./scripts/goalPledgedPlot.R")
 library(dplyr)
 library(shiny)
 library(plotly)
+library(styler)
+library(lintr)
 
 #---- Load Testing Data
-kickstarter <- read.csv(file="./data/ks-projects-201612.csv",
-                        stringsAsFactors = FALSE)
+kickstarter <- read.csv(
+  file = "./data/ks-projects-201612.csv",
+  stringsAsFactors = FALSE
+)
 
-kickstarter18 <- read.csv("./data/ks-projects-201801.csv", stringsAsFactors = FALSE)
+kickstarter18 <- read.csv(
+  file = "./data/ks-projects-201801.csv", 
+  stringsAsFactors = FALSE
+)
 
 
 #---- Start shinyServer
-shinyServer(function(input, output) { 
+shinyServer(function(input, output) {
 
   ### ------- Category Analysis Plots ------- ###
   output$category_plot <- renderPlotly({
@@ -27,23 +34,24 @@ shinyServer(function(input, output) {
   })
   ### ---------- Money Pledge Plots --------- ###
   output$plot_money <- renderPlot(({
-    return(createPledgedPlot(kickstarter18, input$goalRange, input$pledgedRange, input$category))
+    return(createPledgedPlot(kickstarter18, input$goalRange, 
+                             input$pledgedRange, input$category))
   }))
-  
+
   ### ------ Success Statistics Plots ------- ###
   output$sucess_plot_1 <- renderPlot({
     return(create_success_plot(kickstarter))
   })
-  
+
   output$sucess_plot_2 <- renderPlot({
     return(create_raised_plot(kickstarter))
   })
-  
+
   output$sucess_plot_3 <- renderPlot({
     return(create_backers_plot(kickstarter))
   })
-  
-  
+
+
   ### -------- Distributions Plots ---------- ###
   output$plot_distribution <- renderPlotly({
     return(createDistributionPlot(kickstarter, input$selection))
