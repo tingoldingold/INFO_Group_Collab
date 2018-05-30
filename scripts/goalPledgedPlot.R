@@ -3,20 +3,16 @@ library(stringr)
 library(dplyr)
 
 createPledgedPlot <- function(dataset, goalRange, pledgedRange, selectedCategory) {
-  # dataset <- read.csv("./data/ks-projects-201612.csv", stringsAsFactors = FALSE)
   
-  # dataset2 <- read.csv("./data/ks-projects-201801.csv", stringsAsFactors = FALSE)
-  
+  # filter data to only include user selected category
+  # default value is "Film & Video"
   filtered <- dataset %>% filter(main_category == selectedCategory)
-  
-  # how can this be sent into ui.R
-  # mainCategories <- dataset %>% group_by(main_category) %>% summarise(count = n()) %>% arrange(-count)
-  # topCategories <- as.vector(mainCategories$main_category)[1:15]
-  # names(topCategories) <- mainCategories$main_category[1:15]
 
   options("scipen" = 999, "digits" = 3)
 
-  
+  # create scatter plot of goal vs pledged using filtered data
+  # min/max x and y values determined from given user data
+  # color of points determined by subcategory
   p <- ggplot(data = filtered) +
     geom_point(mapping = aes(x = usd_goal_real, y = usd_pledged_real, color = category)) +
     xlim(goalRange[1], goalRange[2]) +
