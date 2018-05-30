@@ -4,7 +4,7 @@
 library(shiny)
 library(plotly)
 library(shinythemes)
-library(dplyr)        
+library(dplyr)  
 
 #---- Start UI
 shinyUI(navbarPage(
@@ -97,18 +97,33 @@ shinyUI(navbarPage(
         position = "right"
       )
     ),
+  # Tab one: Category Analysis
     tabPanel(
-      "Catagory Analysis",
+      "Category Analysis",
       tags$h1("Catagories?"),
       sidebarLayout(
         sidebarPanel(
-          tags$h2("Second Header")
-        ), 
+          tags$h2("Second Header"),
+        # Add a sliderInput to set the size of each point
+        div(id = "input2", style = "color: lightblue; font-size : 18px",
+            sliderInput("size",
+                        label = "Size of point",
+                        min = 1, max = 5, value = 3
+            )),
+        selectInput(
+          "main_category",
+          label = "Choose a main category",
+          choices = list("Art", "Comics", 
+                         "Crafts", "Dance", "Design", "Fashion", "Film & Video",
+                         "Food", "Games", "Journalism", "Music", "Photography",
+                         "Publishing", "Technology")
+        )), 
         mainPanel(
-          #plotOutput("plot")
+          plotOutput("category_plot")
         )
       )
     ),
+  # Tab two: Money Peldged
     tabPanel(
       "Money Pledged",
       tags$h1("What is Kickstater?"),
@@ -121,6 +136,7 @@ shinyUI(navbarPage(
         )
       )
     ),
+  # Tab three: Success Statistics 
     tabPanel(
       "Success Statistics",
       fluidRow(
@@ -150,6 +166,7 @@ shinyUI(navbarPage(
         )
       )
     ),
+  # Tab four: Distributions
     tabPanel(
       "Distributions",
       tags$h1("What is Kickstater?"),

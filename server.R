@@ -2,10 +2,11 @@
 source("./scripts/renderSuccessPlot.R")
 source("./scripts/successRaisedPlot.R")
 source("./scripts/successBackersPlot.R")
-
+source("./scripts/categoryPlot.R")
 #---- Libraries 
 library(dplyr)
 library(shiny)
+library(plotly)
 
 #---- Load Testing Data
 kickstarter <- read.csv(file="./data/ks-projects-201612.csv", 
@@ -15,7 +16,9 @@ kickstarter <- read.csv(file="./data/ks-projects-201612.csv",
 shinyServer(function(input, output) { 
 
   ### ------- Category Analysis Plots ------- ###
-  
+  output$category_plot <- renderPlot({
+    return(create_category_plot(kickstarter, input$main_category))
+  })
   ### ---------- Money Pledge Plots --------- ###
   
   ### ------ Success Statistics Plots ------- ###
