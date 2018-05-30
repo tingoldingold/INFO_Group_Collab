@@ -31,7 +31,10 @@ shinyUI(navbarPage(
             tags$p("Soham Pardeshi studies stuff......."),
             tags$a(href="spard@uw.edu", "Email Soham!"), 
             tags$h3("Estelle Jiang"),
-            tags$p("Estelle Jiang studies stuff......."),
+            tags$p("Estelle is a designer who has enthusiastic about 
+                   interaction and experience. She is currently a junior 
+                   at the University of Washington pursuing, majoring in 
+                   Informatics - Human Computer Interaction track. "),
             tags$a(href="mailto:yichej@uw.edu","Email Estelle!")
           )
         ), 
