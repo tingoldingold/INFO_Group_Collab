@@ -100,16 +100,10 @@ shinyUI(navbarPage(
   # Tab one: Category Analysis
     tabPanel(
       "Category Analysis",
-      tags$h1("Catagories?"),
+      tags$h1("Analyzing Kickstarter's Main Categories"),
       sidebarLayout(
         sidebarPanel(
-          tags$h2("Second Header"),
-        # Add a sliderInput to set the size of each point
-        div(id = "input2", style = "color: lightblue; font-size : 18px",
-            sliderInput("size",
-                        label = "Size of point",
-                        min = 1, max = 5, value = 3
-            )),
+          tags$h2("Tell us your most interested category."),
         selectInput(
           "main_category",
           label = "Choose a main category",
@@ -119,7 +113,9 @@ shinyUI(navbarPage(
                          "Publishing", "Technology")
         )), 
         mainPanel(
-          plotlyOutput("category_plot")
+          plotlyOutput("category_plot"),
+          tags$p(class = "succ_summary", "In this text area will be much more 
+                 explanation about the graphs and the conclusions that we can draw from them. ")
         )
       )
     ),

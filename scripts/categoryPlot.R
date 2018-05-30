@@ -17,15 +17,16 @@ create_category_plot  <- function(dataset, category_name) {
       n = n()
     )
   
-  # Barplot
+  # PieChart 
   p <- plot_ly(artbook, labels = ~category, values = ~n, type = 'pie',
                textposition = 'inside',
                textinfo = 'label+percent',
+               size = 4,
                insidetextfont = list(color = '#FFFFFF'),
                hoverinfo = 'text',
                text = ~paste("Total number of project is ", n),
                marker = list(colors = colors,
-                             line = list(color = '#FFFFFF', width = 1.5)),
+                             line = list(color = '#FFFFFF', width = 0.5)),
                #The 'pull' attribute can also be used to create space between the sectors
                showlegend = FALSE) %>%
     layout(title = 'United States Personal Expenditures by Categories in 1960',
