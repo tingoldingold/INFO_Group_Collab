@@ -27,8 +27,8 @@ createDistributionPlot <- function(dataset, goalBottom, goalTop, userDay) {
                   hoverinfo = "none", color = "red") %>% 
           layout(
               title = paste0('Percent of Goal Reached by Projects', userDay),
-              xaxis = list(title = "Number of Projects"),
-              yaxis = list(title = 'Percentage of Goal Reached'), 
+              xaxis = list(title = 'Percentage of Goal Reached'),
+              yaxis = list(title = "Number of Projects"), 
               paper_bgcolor = 'rgba(245, 246, 249, 1)',
               plot_bgcolor = 'rgba(245, 246, 249, 1)'
           )
