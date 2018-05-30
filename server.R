@@ -13,12 +13,13 @@ library(plotly)
 library(styler)
 library(lintr)
 
-#---- Load Testing Data
+#---- Load Data File
 kickstarter <- read.csv(
   file = "./data/ks-projects-201612.csv",
   stringsAsFactors = FALSE
 )
 
+#---- Load 2nd Data file (2018)
 kickstarter18 <- read.csv(
   file = "./data/ks-projects-201801.csv",
   stringsAsFactors = FALSE
@@ -64,3 +65,4 @@ shinyServer(function(input, output) {
     ))
   })
 })
+
