@@ -154,17 +154,34 @@ shinyUI(navbarPage(
     ),
     tabPanel(
       "Distributions",
-      tags$h1("What is Kickstater?"),
+      tags$h1("How does a Kickstarter Launch-Date Affect a Project?"),
       sidebarLayout(
         sidebarPanel(
+          # Goal Range
+          sliderInput("distribution_range", "Goal Range:",
+                      min = 1, max = 10000,
+                      step = 500, value = c(0, 2500)),
+          
           # Make a list of checkboxes
-          radioButtons("selection", label = h3("Choose metric..."),
-                       choices = list("Test 1" = 1, "Test 2" = 2)
+          radioButtons("distribution_day", label = h3("Pick a day of the week..."),
+                       choices = list(
+                          "All Days" = "All Days", "Monday" = "Monday",
+                          "Tuesday" = "Tuesday", "Wednesday" = "Wednesday", "Thursday" = "Thursday",
+                          "Friday" = "Friday","Saturday" = "Saturday",
+                          "Sunday" = "Sunday"
+                       )
           )
         ),
         
         mainPanel(
-          plotlyOutput("plot_distribution")
+          plotlyOutput("plot_distribution"),
+          br(),
+          p("This interactive graph depicts how far each Kickstarter project has reached toward",
+            "its goal. We can filter by a specific goal range (i.e. how much money the Kickstarter",
+            "project was looking for) as well as the launch day of the week. Surprisingly, the", 
+            "distributions for each metric is roughly the same! In this case, Kickstarter projects",
+            "have roughly the same chance of success or failure regardless of how much money the",
+            "project aims to crowd-source or when the project begins.")
         )
       )
     )

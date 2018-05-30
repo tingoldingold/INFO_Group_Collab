@@ -38,6 +38,7 @@ shinyServer(function(input, output) {
   
   ### -------- Distributions Plots ---------- ###
   output$plot_distribution <- renderPlotly({
-    return(createDistributionPlot(kickstarter, input$selection))
+    return(createDistributionPlot(kickstarter, input$distribution_range[1], 
+                                  input$distribution_range[2], input$distribution_day ))
   })
 })
