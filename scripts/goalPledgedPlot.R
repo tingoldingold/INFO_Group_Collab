@@ -14,7 +14,6 @@ createPledgedPlot <- function(dataset, goalRange, pledgedRange, selectedCategory
   # topCategories <- as.vector(mainCategories$main_category)[1:15]
   # names(topCategories) <- mainCategories$main_category[1:15]
   
-  
   p <- ggplot(data = filtered) +
     geom_point(mapping = aes(x = usd_goal_real, y = usd_pledged_real, color = category)) +
     xlim(goalRange[1], goalRange[2]) +

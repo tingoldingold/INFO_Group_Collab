@@ -133,7 +133,11 @@ shinyUI(navbarPage(
                       max = 1000000, value = c(0, 500000), step = 5000)
         ), 
         mainPanel(
-          plotOutput("plot_money")
+          plotOutput("plot_money"),
+          tags$p("This plot shows trends between the target fundraising amount of the project in
+                 comparison to the actual amount raised. The plots can be adjusted based on the 
+                 min and max amounts for either axis in order to see trends for projects in a 
+                 similar price range to your potential project.")
         )
       )
     ),
