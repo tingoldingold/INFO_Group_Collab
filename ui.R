@@ -5,6 +5,8 @@ library(shiny)
 library(plotly)
 library(shinythemes)
 library(dplyr)  
+library(styler)
+library(lintr)
 
 #---- Start UI
 shinyUI(navbarPage(
@@ -158,10 +160,8 @@ shinyUI(navbarPage(
 
         ), 
         mainPanel(
-<<<<<<< HEAD
-          plotOutput("plot_money", height = 500)
-=======
-          plotOutput("plot_money"),
+
+          plotOutput("plot_money", height = 500),
           tags$p("This plot shows trends between the target fundraising amount of the project in
                  comparison to the actual amount raised. The plots can be adjusted based on the 
                  min and max amounts for either axis in order to see trends for projects in a 
@@ -171,7 +171,7 @@ shinyUI(navbarPage(
                  categories, there is a trendline at a slope of 1 because many projects raise just 
                  over their goal. As the goal amount gets higher, there are not many projects that 
                  fall just short of the goal, most of them either reach the goal or don't come close.")
->>>>>>> 41a01546e9794713904e5c8a3a9eb74c0eff8773
+
         )
       )
     ),
