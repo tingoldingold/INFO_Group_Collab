@@ -13,7 +13,9 @@ createPledgedPlot <- function(dataset, goalRange, pledgedRange, selectedCategory
   # mainCategories <- dataset %>% group_by(main_category) %>% summarise(count = n()) %>% arrange(-count)
   # topCategories <- as.vector(mainCategories$main_category)[1:15]
   # names(topCategories) <- mainCategories$main_category[1:15]
+
   options("scipen" = 999, "digits" = 3)
+
   
   p <- ggplot(data = filtered) +
     geom_point(mapping = aes(x = usd_goal_real, y = usd_pledged_real, color = category)) +

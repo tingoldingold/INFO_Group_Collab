@@ -4,7 +4,7 @@
 library(shiny)
 library(plotly)
 library(shinythemes)
-library(dplyr)        
+library(dplyr)  
 
 #---- Start UI
 shinyUI(navbarPage(
@@ -39,7 +39,10 @@ shinyUI(navbarPage(
             tags$a(href="mailto:spard@uw.edu", "Email Soham!"), 
 
             tags$h3("Estelle Jiang"),
-            tags$p("Estelle Jiang studies stuff......."),
+            tags$p("Estelle is a designer who has enthusiastic about 
+                   interaction and experience. She is currently a junior 
+                   at the University of Washington pursuing, majoring in 
+                   Informatics - Human Computer Interaction track. "),
             tags$a(href="mailto:yichej@uw.edu","Email Estelle!")
           )
         ), 
@@ -105,18 +108,29 @@ shinyUI(navbarPage(
         position = "right"
       )
     ),
+  # Tab one: Category Analysis
     tabPanel(
-      "Catagory Analysis",
-      tags$h1("Catagories?"),
+      "Category Analysis",
+      tags$h1("Analyzing Kickstarter's Main Categories"),
       sidebarLayout(
         sidebarPanel(
-          tags$h2("Second Header")
-        ), 
+          tags$h2("Tell us your most interested category."),
+        selectInput(
+          "main_category",
+          label = "Choose a main category",
+          choices = list("Art", "Comics", 
+                         "Crafts", "Dance", "Design", "Fashion", "Film & Video",
+                         "Food", "Games", "Journalism", "Music", "Photography",
+                         "Publishing", "Technology")
+        )), 
         mainPanel(
-          plotOutput("plot_category")
+          plotlyOutput("category_plot"),
+          tags$p(class = "succ_summary", "In this text area will be much more 
+                 explanation about the graphs and the conclusions that we can draw from them. ")
         )
       )
     ),
+  # Tab two: Money Peldged
     tabPanel(
       "Money Pledged",
 
@@ -144,10 +158,24 @@ shinyUI(navbarPage(
 
         ), 
         mainPanel(
+<<<<<<< HEAD
           plotOutput("plot_money", height = 500)
+=======
+          plotOutput("plot_money"),
+          tags$p("This plot shows trends between the target fundraising amount of the project in
+                 comparison to the actual amount raised. The plots can be adjusted based on the 
+                 min and max amounts for either axis in order to see trends for projects in a 
+                 similar price range to your potential project."),
+          tags$p("The projects that lie along the bottom of the graph are likely the ones that
+                 did not succeed because they did not meet their fundraising goal. In most 
+                 categories, there is a trendline at a slope of 1 because many projects raise just 
+                 over their goal. As the goal amount gets higher, there are not many projects that 
+                 fall just short of the goal, most of them either reach the goal or don't come close.")
+>>>>>>> 41a01546e9794713904e5c8a3a9eb74c0eff8773
         )
       )
     ),
+  # Tab three: Success Statistics 
     tabPanel(
       "Success Statistics",
       fluidRow(
@@ -246,6 +274,7 @@ shinyUI(navbarPage(
         )
       )
     ),
+  # Tab four: Distributions
     tabPanel(
       "Distributions",
       tags$h1("What is Kickstater?"),
