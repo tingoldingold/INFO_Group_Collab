@@ -118,15 +118,17 @@ shinyUI(navbarPage(
         selectInput(
           "main_category",
           label = "Choose a main category",
-          choices = list("Art", "Comics", 
-                         "Crafts", "Dance", "Design", "Fashion", "Film & Video",
-                         "Food", "Games", "Journalism", "Music", "Photography",
-                         "Publishing", "Technology")
+          choices = list("Art" = "Art", "Comics" = "Comics", 
+                         "Crafts" = "Crafts", "Dance" = "Dance", "Design" = "Design", "Fashion" = "Fashion", 
+                         "Film & Video" = "Film & Video",
+                         "Food"= "Food", "Games" = "Games", "Journalism" = "Journalism", "Music" = "Music", 
+                         "Photography" = "Photography",
+                         "Publishing" = "Publishing", "Technology" = "Technology")
         )), 
         mainPanel(
-          plotlyOutput("category_plot"),
-          tags$p(class = "succ_summary", "In this text area will be much more 
-                 explanation about the graphs and the conclusions that we can draw from them. ")
+          tags$div(plotlyOutput("category_plot")),
+          tags$p(class = "succ_summary top", "This pie chart shows all of subcategories under the main category you chose. The plots can be adjusted based on the 
+                 user's input. Then users are able to check varied subcategories under each main category and get a better idea about how many projects under each subcategory. ")
         )
       )
     ),
@@ -159,7 +161,7 @@ shinyUI(navbarPage(
         ), 
         mainPanel(
           plotOutput("plot_money"),
-          tags$p("This plot shows trends between the target fundraising amount of the project in
+          tags$p(class = "succ_summary", "This plot shows trends between the target fundraising amount of the project in
                  comparison to the actual amount raised. The plots can be adjusted based on the 
                  min and max amounts for either axis in order to see trends for projects in a 
                  similar price range to your potential project.")
