@@ -16,7 +16,7 @@ kickstarter <- read.csv(file="./data/ks-projects-201612.csv",
 shinyServer(function(input, output) { 
 
   ### ------- Category Analysis Plots ------- ###
-  output$category_plot <- renderPlot({
+  output$category_plot <- renderPlotly({
     return(create_category_plot(kickstarter, input$main_category))
   })
   ### ---------- Money Pledge Plots --------- ###

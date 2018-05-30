@@ -119,7 +119,7 @@ shinyUI(navbarPage(
                          "Publishing", "Technology")
         )), 
         mainPanel(
-          plotOutput("category_plot")
+          plotlyOutput("category_plot")
         )
       )
     ),
