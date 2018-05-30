@@ -26,11 +26,11 @@ shinyUI(navbarPage(
                    Informatics Minor. His main interest are in Data Analytics 
                    and Visualization."),
 
-            tags$a(href="mailto:tingold1997@gmail.com", "Email Tristan!"), 
+            tags$a(href = "mailto:tingold1997@gmail.com", "Email Tristan!"), 
             tags$h3("Maegan Nevalsky"),
             tags$p("Maegan is a Junior at the University of Washington studying
                    Computer Science."),
-            tags$a(href="mailto:maegann@uw.edu ", "Email Maegan!"), 
+            tags$a(href = "mailto:maegann@uw.edu ", "Email Maegan!"), 
 
             tags$h3("Soham Pardeshi"),
             tags$p("Soham Pardeshi is a Philosophy student at the University
@@ -38,14 +38,14 @@ shinyUI(navbarPage(
                   epistemological overlap between human intelligence and 
                    artificial intelligence."),
 
-            tags$a(href="mailto:spard@uw.edu", "Email Soham!"), 
+            tags$a(href = "mailto:spard@uw.edu", "Email Soham!"), 
 
             tags$h3("Estelle Jiang"),
             tags$p("Estelle is a designer who has enthusiastic about 
                    interaction and experience. She is currently a junior 
                    at the University of Washington pursuing, majoring in 
                    Informatics - Human Computer Interaction track. "),
-            tags$a(href="mailto:yichej@uw.edu","Email Estelle!")
+            tags$a(href = "mailto:yichej@uw.edu", "Email Estelle!")
           )
         ), 
         mainPanel(
@@ -60,7 +60,7 @@ shinyUI(navbarPage(
                  project will eventually be completed, and something will be 
                  produced by it."), 
           tags$h3("Basics for Kickstarter"),
-          tags$p("A project is a finite work with a clear goal that you’d like 
+          tags$p("A project is a finite work with a clear goal that you'd like 
                  to bring to life. Think albums, books, or films. The funding 
                  goal is the amount of money that a creator needs to complete 
                  their project. Funding on Kickstarter is all-or-nothing. No one
@@ -284,7 +284,7 @@ shinyUI(navbarPage(
           # Slider input for max and min goal (i.e. goal range)
           sliderInput("distribution_range", "Goal Range:",
                       min = 1, max = 10000,
-                      step = 500, value = c(0, 2500)),
+                      step = 500, value = c(0, 2500), animate = TRUE),
           
           # Make a list of days (and one option for "All Days")
           radioButtons("distribution_day", "Pick a day of the week...",
