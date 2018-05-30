@@ -23,7 +23,8 @@ createDistributionPlot <- function(dataset, goalBottom, goalTop, userDay) {
 
 
   # Build the plot based on the data set
-  plot <- plot_ly(dataset, x = ~percent_reached, type = "histogram") %>% 
+  plot <- plot_ly(dataset, x = ~percent_reached, type = "histogram",
+                  hoverinfo = "none", color = "red") %>% 
           layout(
               title = paste0('Percent of Goal Reached by Projects', userDay),
               xaxis = list(title = "Number of Projects"),

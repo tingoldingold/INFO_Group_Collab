@@ -1,5 +1,19 @@
 .para_one {
   color: gray;
+  animation-duration: 2s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%; 
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
 }
 
 h1{
@@ -23,8 +37,16 @@ hr {
   position: relative;
   padding: 50px;
   transition: transform .3s;
+  text-align: justify;
 }
 
 .succ_summary:hover {
     transform: scale(1.15);
 }
+
+.top {
+  margin-top:250px;
+}
+
+
+
