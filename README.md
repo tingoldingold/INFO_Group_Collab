@@ -1,4 +1,4 @@
-# INFO 201 FINAL PROJECT PROPOSAL
+# [INFO 201 FINAL PROJECT PROPOSAL](https://fike-meeman.shinyapps.io/info_group_collab/)
 
 Maegan Nevalsky, Tristan Ingold, Soham Pardeshi, Estelle Jiang
 

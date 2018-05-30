@@ -5,6 +5,6 @@ account: mnevalsky
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 350926
-bundleId: 1399663
+bundleId: 1401372
 url: https://fike-meeman.shinyapps.io/info_group_collab/
-when: 1527653986.96426
+when: 1527713650.60265
